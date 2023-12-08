@@ -1,0 +1,24 @@
+/*CSS adicionais*/
+
+.img-general {
+    width: 370px;
+    height: 605px;
+    object-fit: cover;
+}
+
+.img-logo-general {
+    width: 250px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+.img-logo-logged {
+    height: 60px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
