@@ -53,4 +53,6 @@ Route::prefix('/app')->group(function(){
     Route::get('/games/teams/{id}', [GameController::class, 'teams'])->name('game-team')->middleware('auth');
     Route::get('/games/presence/{id}/{p}', [GameController::class, 'presence'])->name('game-presence')->middleware('auth');
     Route::delete('/games/delete/{id}', [GameController::class, 'delete'])->name('game-delete')->middleware('auth');
+    Route::get('/games/sortingteam/{id}', [GameController::class, 'sortingteams'])->name('game-sortingteam')->middleware('auth');
+    
 });

@@ -15,6 +15,12 @@ use App\Repositories\GameRepository;
 use App\Repositories\Contracts\GamePlayerRepositoryContract;
 use App\Repositories\GamePlayerRepository;
 
+use App\Repositories\Contracts\GameTeamRepositoryContract;
+use App\Repositories\GameTeamRepository;
+
+use App\Repositories\Contracts\TeamPlayerRepositoryContract;
+use App\Repositories\TeamPlayerRepository;
+
 class RepositoryServiceProvider extends ServiceProvider
 {
     /**
@@ -26,6 +32,8 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(PlayerRepositoryContract::class, PlayerRepository::class);
         $this->app->bind(GameRepositoryContract::class, GameRepository::class);
         $this->app->bind(GamePlayerRepositoryContract::class, GamePlayerRepository::class);
+        $this->app->bind(GameTeamRepositoryContract::class, GameTeamRepository::class);
+        $this->app->bind(TeamPlayerRepositoryContract::class, TeamPlayerRepository::class);
     }
 
     /**

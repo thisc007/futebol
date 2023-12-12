@@ -33,20 +33,53 @@
                     <br><br>
                     <div class="row">
                         <div class="col-lg-12">
-                            @if (count($players) >= 2*$game->playersteam)
-                            <a class="btn btn-icon-split btn-info "
-                            href="{{ route('game-team', [$game->id]) }}"><span
-                                class="icon"><i class="fa fa-users"></i></span>&nbsp;<span
-                                class="icon">Separar times</span></a>
+                            <h5>Times separados</h5>
+                            @if (count($players) >= 2 * $game->playersteam)
+                                @if (count($teams) == 0)
+                                    <a class="btn btn-icon-split btn-info "
+                                        href="{{ route('game-sortingteam', [$game->id]) }}"><span class="icon"><i
+                                                class="fa fa-users"></i></span>&nbsp;<span class="icon">Separar
+                                            times</span></a>
+                                @endif
+                                <br>
+                                <table class="table table-bordered dataTable">
+                                    <thead>
+                                        <th>#</th>
+                                        <th>Nome</th>
+                                        <th>Time</th>
+                                        <th>Nível</th>
 
+                                    </thead>
+                                    <tbody id="teams">
+
+                                        @foreach ($teams as $key => $p)
+                                            <tr>
+                                                <td>{{ $key + 1 }}</td>
+                                                <td>{{ strtoupper($p->last_name) . ', ' . $p->first_name }}</td>
+
+                                                <td>{{ $p->team }}</td>
+                                                <td>
+                                                    @for ($i = 0; $i < $p->level; $i++)
+                                                        <i class="fas fa-star"></i>
+                                                    @endfor
+                                                </td>
+
+
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+
+                                </table>
                             @endif
+
+
                         </div>
                     </div>
                     <br><br>
                     <div class="row">
                         <div class="col-lg-12">
                             <h5>Confirmados</h5>
-                            
+
                             <table class="table table-bordered dataTable">
                                 <thead>
                                     <th>#</th>
@@ -57,12 +90,12 @@
                                 </thead>
                                 <tbody id="conf">
                                     @if (is_countable($players) && count($players) > 0)
-                                    <?php $key=0; ?>
+                                        <?php $key = 0; ?>
                                         @while ($key < count($players))
-                                        
                                             <tr>
-                                                <td>{{ $key+1 }}</td>
-                                                <td>{{ strtoupper($players[$key]->last_name) . ', ' . $players[$key]->first_name }}</td>
+                                                <td>{{ $key + 1 }}</td>
+                                                <td>{{ strtoupper($players[$key]->last_name) . ', ' . $players[$key]->first_name }}
+                                                </td>
 
                                                 <td>{{ $players[$key]->phone }}</td>
                                                 <td>
@@ -122,8 +155,8 @@
                             </table>
                         </div>
                     </div>
-                    
-                    
+
+
                 </div>
             </div>
         </div>

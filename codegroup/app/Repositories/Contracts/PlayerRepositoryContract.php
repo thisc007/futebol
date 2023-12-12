@@ -6,6 +6,8 @@ namespace App\Repositories\Contracts;
 interface PlayerRepositoryContract
 {
     public function getAllPlayers();
+    public function getAllGK();
+    public function getAllLinePlayers();
     public function getPlayerById(String $playerId);
     public function deletePlayer(String $playerId);
     public function createPlayer(array $playerDetails);

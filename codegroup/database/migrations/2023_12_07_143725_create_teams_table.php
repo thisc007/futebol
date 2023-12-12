@@ -15,10 +15,8 @@ return new class extends Migration
 
         Schema::create('teamplayers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('game_id')->nullable()->constrained('games')->onDelete('set null');
-            //$table->foreign('team_id')->references('id')->on('teams');
-            $table->foreignId('player_id')->nullable()->constrained('players')->onDelete('set null');
-            //$table->foreign('player_id')->references('id')->on('players');
+            $table->foreignId('game_id')->nullable()->constrained('games')->onDelete('set null');            
+            $table->foreignId('player_id')->nullable()->constrained('players')->onDelete('set null');           
             $table->integer('team');
             $table->timestamps();
         });

@@ -15,6 +15,16 @@ class PlayerRepository implements PlayerRepositoryContract
     {
         return Player::all();
     }
+    public function getAllGK()
+    {
+        return Player::where('is_goalkeeper = true')->get();
+    }
+
+    public function getAllLinePlayers()
+    {
+        return Player::where('is_goalkeeper = false')->orderby('level', 'desc')->get();
+    }
+
 
     public function getPlayerById(string $playerId)
     {
