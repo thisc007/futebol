@@ -55,9 +55,15 @@
                                     </button>
                                 </form>
                                 <hr>
-                                <!--<div class="text-center">
-                                    <a class="small" href="{{ route('password.request') }}">Esqueceu a senha?</a>
-                                </div>-->                               
+                                <div class="text-center">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <p>Para logar no projeto use:</p>
+                                            <p><b>Login: </b>jogador@example.com</p>
+                                            <p><b>Senha: </b>123456</p>
+                                        </div>
+                                    </div>
+                                </div>                               
                             </div>
                         </div>
                     </div>
